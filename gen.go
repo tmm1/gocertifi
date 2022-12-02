@@ -94,6 +94,7 @@ const pemcerts string = ` + "`" + `
 func CACerts() (*x509.CertPool, error) {
 	pool := x509.NewCertPool()
 	pool.AppendCertsFromPEM([]byte(pemcerts))
+	pool.AppendCertsFromPEM([]byte(pemcertsextra))
 	return pool, nil
 }
 `))
